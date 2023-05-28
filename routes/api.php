@@ -22,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['api', 'auth:sanctum'])->group(function () {
     Route::post('subscribers', \App\Http\Controllers\Api\CreateSubscriberController::class);
 });
+
+
+Route::post('user', [\App\Http\Controllers\UserController::class, 'create']);
+Route::get('user', [\App\Http\Controllers\UserController::class, 'index']);
